@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Progress Bar Generator
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It generates customizable SVG progress bars.
+
+## Features
+
+- Generation of SVG progress bars with customizable parameters.
+- Support for light and dark themes.
+- Integration with popular libraries like `react-toastify` for notifications and `react-colorful` for color selection.
+- Automatic font optimization with [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts).
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org)
+- [React](https://reactjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Heroicons](https://heroicons.com)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
+- [React Colorful](https://omgovich.github.io/react-colorful/)
 
 ## Getting Started
 
@@ -18,7 +36,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Use
+
+1. Access the application at [http://localhost:3000](http://localhost:3000) or the production URL [https://progress-bar-dev.vercel.app/](https://progress-bar-dev.vercel.app/).
+2. Customize the progress bar parameters, such as progress, scale, title, suffix, width, and color.
+3. See the generated SVG progress bar in real-time.
+4. Copy the generated SVG code to use in your projects.
 
 ## Learn More
 
@@ -27,7 +50,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can check out the [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
