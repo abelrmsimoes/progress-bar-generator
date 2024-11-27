@@ -1,32 +1,40 @@
-export function generateProgressBarSVG(params: {
+interface ProgressBarParams {
   progress: number;
   scale?: number;
   title?: string;
   suffix?: string;
   width?: number;
   color?: string;
+}
+
+function getProgressColor(prog: number, totalScale: number): string {
+  const ratio = prog / totalScale;
+  if (ratio < 0.3) return '#d9534f';
+  if (ratio < 0.7) return '#f0ad4e';
+  return '#5cb85c';
+}
+
+function createSVG({
+  totalWidth,
+  titleWidth,
+  width,
+  progressBarWidth,
+  progressColor,
+  title,
+  progress,
+  suffix,
+  color
+}: {
+  totalWidth: number;
+  titleWidth: number;
+  width: number;
+  progressBarWidth: number;
+  progressColor: string;
+  title: string;
+  progress: number;
+  suffix: string;
+  color: string;
 }): string {
-  const {
-    progress,
-    scale = 100,
-    title = '',
-    suffix = '%',
-    width = title ? 60 : 90,
-    color = '428bca'
-  } = params;
-
-  const getProgressColor = (prog: number, totalScale: number): string => {
-    const ratio = prog / totalScale;
-    if (ratio < 0.3) return '#d9534f';
-    if (ratio < 0.7) return '#f0ad4e';
-    return '#5cb85c';
-  };
-
-  const progressColor = getProgressColor(progress, scale);
-  const titleWidth = title ? 10 + 6 * title.length : 0;
-  const totalWidth = titleWidth + width;
-  const progressBarWidth = Math.min((progress / scale) * width, width);
-
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${totalWidth}" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <linearGradient id="a" x2="0" y2="100%">
@@ -49,8 +57,36 @@ export function generateProgressBarSVG(params: {
   </g>` : ''}
   
   <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
-    <text x="${Math.floor(width/2 + titleWidth)}" y="15" fill="#010101" fill-opacity=".3">${progress}${suffix}</text>
-    <text x="${Math.floor(width/2 + titleWidth)}" y="14">${progress}${suffix}</text>
+    <text x="${Math.floor(width / 2 + titleWidth)}" y="15" fill="#010101" fill-opacity=".3">${progress}${suffix}</text>
+    <text x="${Math.floor(width / 2 + titleWidth)}" y="14">${progress}${suffix}</text>
   </g>
 </svg>`;
+}
+
+export function generateProgressBarSVG(params: ProgressBarParams): string {
+  const {
+    progress,
+    scale = 100,
+    title = '',
+    suffix = '%',
+    width = title ? 150 : 180,
+    color = '428bca'
+  } = params;
+
+  const progressColor = getProgressColor(progress, scale);
+  const titleWidth = title ? 10 + 6 * title.length : 0;
+  const totalWidth = titleWidth + width;
+  const progressBarWidth = Math.min((progress / scale) * width, width);
+
+  return createSVG({
+    totalWidth,
+    titleWidth,
+    width,
+    progressBarWidth,
+    progressColor,
+    title,
+    progress,
+    suffix,
+    color
+  });
 }

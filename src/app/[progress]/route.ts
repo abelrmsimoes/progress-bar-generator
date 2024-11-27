@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
       title: searchParams.get('title') || undefined,
       suffix: searchParams.get('suffix') || undefined,
       width: searchParams.has('width') 
-        ? parseInt(searchParams.get('width') || '90', 10)
+        ? parseInt(searchParams.get('width') || '180', 10)
         : undefined,
       color: searchParams.get('color') || undefined
     };
