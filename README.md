@@ -41,7 +41,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 1. Access the application at [http://localhost:3000](http://localhost:3000) or the production URL [https://progress-bar-dev.vercel.app/](https://progress-bar-dev.vercel.app/).
 2. Customize the progress bar parameters, such as progress, scale, title, suffix, width, and color.
 3. See the generated SVG progress bar in real-time.
-4. Copy the generated SVG code to use in your projects.
+4. Copy the generated URL to use the progress bar in your projects.
+
+## Examples
+![Example 01](https://progress-bar-dev.vercel.app/27/?title=Example%2001&width=250&color=17865e)
+
+![Example 02](https://progress-bar-dev.vercel.app/15/?title=Example%2002&suffix=%20%2F%2030&scale=30&width=50&color=656080)
+
+![Example 03](https://progress-bar-dev.vercel.app/75/?title=Example%2003&suffix=%20of%2090&scale=90&width=120&color=f71111)
+
+![Example 04](https://progress-bar-dev.vercel.app/50/)
 
 ## Learn More
 
