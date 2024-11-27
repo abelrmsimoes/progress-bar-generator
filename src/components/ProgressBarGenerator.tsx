@@ -36,10 +36,11 @@ export default function ProgressBarGenerator() {
     try {
       const fullUrl = `${window.location.origin}${generateUrl()}`
       await navigator.clipboard.writeText(fullUrl)
-      toast.success('URL copiada com sucesso!')
+      toast.success('URL copied to clipboard!')
+      window.open(fullUrl, '_blank')
     } catch (err) {
-      console.error('Erro ao copiar URL:', err)
-      toast.error('Erro ao copiar URL')
+      console.error(err)
+      toast.error('Failed to copy URL to clipboard')
     }
   }
 
@@ -167,7 +168,7 @@ export default function ProgressBarGenerator() {
           onClick={handleCopy}
           className="w-full bg-blue-500 text-white py-2 rounded-md shadow-lg hover:bg-blue-600 transition duration-300"
         >
-          Copy URL
+          Open in New Tab & Copy URL
         </button>
       </div>
 
