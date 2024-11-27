@@ -1,4 +1,4 @@
-import { FireIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 import { ThemeToggle } from './ThemeToggle'
 
 export function Header() {
@@ -7,7 +7,12 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
-            <FireIcon className="h-8 w-8 text-red-500" />
+            <Image
+              src="./favicon.svg"
+              alt="Progress Bar Generator"
+              width={32}
+              height={32}
+            />
             <h1 className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">
               Progress Bar Generator
             </h1>

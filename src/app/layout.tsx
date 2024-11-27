@@ -5,6 +5,7 @@ import { ThemeProvider } from 'next-themes'
 import './globals.css'
 
 export const metadata = {
+  icons: './favicon.svg',
   title: 'Progress Bar Generator',
   description: 'Create custom progress bar SVGs easily',
   authors: [{ name: 'Community Project' }],
